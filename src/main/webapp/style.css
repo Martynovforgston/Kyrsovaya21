@@ -154,3 +154,9 @@ input[type="number"]:focus {
 table {
 	padding-bottom: 10px;
 }
+
+.logo{
+	float: left;
+	overflow: hidden;
+	padding:2px;
+}

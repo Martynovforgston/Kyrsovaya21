@@ -16,6 +16,9 @@ function openWindow() {
 </script> 
 
 <div class="navbar">
+	<div class="logo">
+		<img src="image/logo.jpg" width=50em height=50em>
+	</div>
 	<div class="dropdown">
 		<button class="dropbtn">Файл</button>
 			<div class="dropdown-content">

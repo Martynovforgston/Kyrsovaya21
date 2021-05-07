@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
 		// Не успешная авторизация
 		if (account == null) { 
 			request.setAttribute("message", "Неверный логин или пароль");
-			request.getRequestDispatcher("/login.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
 		}
 		// Успешная авторизация
 		else {
@@ -47,6 +47,6 @@ public class LoginServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-		request.getRequestDispatcher("login.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
     }
 }

@@ -52,7 +52,7 @@ public class AdminServlet extends HttpServlet {
 			settings.save();
 			request.setAttribute("messageSuccess", "Изменения успешно сохранены");
 		}
-		request.getRequestDispatcher("admin.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/admin.jsp").forward(request, response);
 	}
 	
 	@Override
@@ -80,6 +80,6 @@ public class AdminServlet extends HttpServlet {
 			// Обновляем данные для формы
 			req.setAttribute(property.getName(), property.getValue());
 		}
-        req.getRequestDispatcher("admin.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/admin.jsp").forward(req, resp);
     }
 }

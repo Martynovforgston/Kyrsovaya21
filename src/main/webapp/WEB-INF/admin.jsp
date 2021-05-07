@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Админ-панель</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <form action = "${pageContext.request.contextPath}/admin" method="post" id="Admin">

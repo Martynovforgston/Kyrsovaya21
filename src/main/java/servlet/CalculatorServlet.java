@@ -80,7 +80,7 @@ public class CalculatorServlet extends HttpServlet {
 			request.setAttribute("promo", promoValue);
 			request.setAttribute("result", (Math.round(result * 100)) / 100);
 			// Выводим результат
-			request.getRequestDispatcher("calculator.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/calculator.jsp").forward(request, response);
 		}
 	}
 	
@@ -119,7 +119,7 @@ public class CalculatorServlet extends HttpServlet {
 				}
 			}
 			
-			request.getRequestDispatcher("/calculator.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/calculator.jsp").forward(request, response);
 	    }
     }
 }

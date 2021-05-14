@@ -36,7 +36,6 @@ public class CalculatorServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Пользователь не авторизован
 		if (request.getSession().getAttribute("logged") == null || !(Boolean)request.getSession().getAttribute("logged")) {
-			System.out.println("Not logged (POST)");
 			request.removeAttribute("message");
 			response.sendRedirect(request.getContextPath() + "/login");
 			return;
@@ -50,7 +49,6 @@ public class CalculatorServlet extends HttpServlet {
 			int countM2 = Helper.parseInt(request.getParameter("Floor"));
 			
 			boolean isOn = request.getParameter("on") != null;
-			System.out.println(Boolean.toString(isOn));
 			
 			String promoValue = Helper.parseString(request.getParameter("promo"));
 			String region = Helper.parseString(request.getParameter("district"));
@@ -96,7 +94,7 @@ public class CalculatorServlet extends HttpServlet {
 		else {
 			String action = Helper.parseString(request.getParameter("actionToDo"));
 			Double result = Helper.parseDouble(request.getParameter("result"));
-			System.out.println("Action is " + action + " and result is " + result.toString());
+			
 			// Пользователь выбрал пункт меню сохранения файла
 			if (action.equals("saveToFile") && result > 0) {
 				

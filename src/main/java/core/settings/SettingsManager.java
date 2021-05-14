@@ -11,13 +11,13 @@ public class SettingsManager extends SettingsBase<Property> {
 	
 	private String filePath = "settings.txt";
 	
-	public PropertyGeneric<Float> KalininskyCoeff = new PropertyGeneric<Float>("Kalininsky", 1.1);
-	public PropertyGeneric<Float> DemskyCoeff = new PropertyGeneric<Float>("Demsky", 1.2);
-	public PropertyGeneric<Float> KirovskyCoeff = new PropertyGeneric<Float>("Kirovsky", 1.1);
-	public PropertyGeneric<Float> LeninskyCoeff = new PropertyGeneric<Float>("Leninsky", 1.1);
-	public PropertyGeneric<Float> OctoberskyCoeff = new PropertyGeneric<Float>("Octobersky", 1.0);
-	public PropertyGeneric<Float> OrdzhonikidzevskiyCoeff = new PropertyGeneric<Float>("Ordzhonikidzevskiy", 1.2);
-	public PropertyGeneric<Float> SovetskiyCoeff = new PropertyGeneric<Float>("Sovetsky", 1.1);
+	public PropertyGeneric<Double> KalininskyCoeff = new PropertyGeneric<Double>("Kalininsky", 1.1);
+	public PropertyGeneric<Double> DemskyCoeff = new PropertyGeneric<Double>("Demsky", 1.2);
+	public PropertyGeneric<Double> KirovskyCoeff = new PropertyGeneric<Double>("Kirovsky", 1.1);
+	public PropertyGeneric<Double> LeninskyCoeff = new PropertyGeneric<Double>("Leninsky", 1.1);
+	public PropertyGeneric<Double> OctoberskyCoeff = new PropertyGeneric<Double>("Octobersky", 1.0);
+	public PropertyGeneric<Double> OrdzhonikidzevskiyCoeff = new PropertyGeneric<Double>("Ordzhonikidzevskiy", 1.2);
+	public PropertyGeneric<Double> SovetskiyCoeff = new PropertyGeneric<Double>("Sovetsky", 1.1);
 
 	public SettingsManager() {
 		// Инициализируем настройки
@@ -32,7 +32,7 @@ public class SettingsManager extends SettingsBase<Property> {
 
 	@Override
 	public boolean load() {
-		// Р¤Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚, Р·Р°РіСЂСѓР·РєР° РЅРµРІРѕР·РјРѕР¶РЅР°
+		// Не удалось создать файл для настроек
 		if (!Helper.TryCreateFile(filePath))
 			return false;
 		
@@ -48,7 +48,7 @@ public class SettingsManager extends SettingsBase<Property> {
 				
 				Property property = super.find(data[0]);
 
-				// РћР±РЅРѕРІР»РµРЅРёРµ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµР№ РЅР°СЃС‚СЂРѕР№РєРё
+				// Пытаемся преобразовать переменную в нужный тип
                 if (property != null)
                 {
                     if (property.getValue() instanceof Boolean)
@@ -59,13 +59,13 @@ public class SettingsManager extends SettingsBase<Property> {
                     {
                     	property.setValue(Integer.parseInt(data[1]));
                     }
-                    else if (property.getValue() instanceof Float)
-                    {
-                    	property.setValue(Float.parseFloat(data[1]));
-                    }
                     else if (property.getValue() instanceof Double)
                     {
                     	property.setValue(Double.parseDouble(data[1]));
+                    }
+                    else if (property.getValue() instanceof Float)
+                    {
+                    	property.setValue(Float.parseFloat(data[1]));
                     }
                     else if (property.getValue() instanceof String)
                     {
@@ -84,7 +84,7 @@ public class SettingsManager extends SettingsBase<Property> {
 
 	@Override
 	public boolean save() {
-		// РџС‹С‚Р°РµРјСЃСЏ СЃРѕР·РґР°С‚СЊ С„Р°Р№Р», РµСЃР»Рё РµРіРѕ РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚
+		// Не удалось создать фалй для настроек
 		if (Helper.TryCreateFile(filePath)) {
 			
 			try (PrintWriter writer = new PrintWriter(filePath, "UTF-8")) {	

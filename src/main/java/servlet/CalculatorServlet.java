@@ -102,7 +102,7 @@ public class CalculatorServlet extends HttpServlet {
 				response.setHeader("Content-disposition", "attachment; filename=results.txt");
 
 				String data = "Кол-во одностворчатых окон: " + Helper.parseString(request.getParameter("count1leaf")) + "\n";
-				data += "Кол-во двустворчевых окон: " + Helper.parseString(request.getParameter("count2leaf")) + "\n";
+				data += "Кол-во двухстворчатых окон: " + Helper.parseString(request.getParameter("count2leaf")) + "\n";
     			data += "Кол-во трехстворченных окон: " + Helper.parseString(request.getParameter("count3leaf")) + "\n";
     			data += "Кол-во км м пола: " + Helper.parseString(request.getParameter("countM2")) + "\n";
     			data += "Услуга мытья санузла: " + (Helper.parseBool(request.getParameter("isOn")) ? "включена" : "отсутствует") + "\n";

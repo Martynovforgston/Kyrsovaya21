@@ -51,7 +51,7 @@ public class AdminServlet extends HttpServlet {
 			// Сохраняем в файл
 			settings.save();
 			request.setAttribute("messageSuccess", "Изменения успешно сохранены");
-		}
+		}		
 		request.getRequestDispatcher("WEB-INF/admin.jsp").forward(request, response);
 	}
 	

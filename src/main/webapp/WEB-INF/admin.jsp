@@ -50,7 +50,12 @@
 			<button type="submit" name="saveChange" class="btnAdmin"> Сохранить изменения</button>
 		</td>
 		</tr>
-
+		
+		<tr>
+		<td colspan=2>
+			<button type="submit" name="logout" class="btnAdmin"> Выйти из аккаунта</button>
+		</td>
+		</tr>
 	</table>
 </div>
 </form>

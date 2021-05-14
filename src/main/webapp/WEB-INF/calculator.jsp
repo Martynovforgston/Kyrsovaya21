@@ -72,7 +72,9 @@ function openWindow() {
 
 			<input type="text" name="result" id="section-to-print" value="${result}" disabled> <br>
 
-			<button type="submit" name="calculate" value="Calc" class="btn">Рассчитать</button>
+			<button type="submit" name="calculate" value="Calc" class="btn">Рассчитать</button> <br>
+			
+			<button type="submit" name="logout" class="btn"> Выйти из аккаунта</button>
 		</form>
 	</div>
 </div>

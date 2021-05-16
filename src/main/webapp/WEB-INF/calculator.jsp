@@ -71,7 +71,7 @@ function openWindow() {
 				</tr>
 			</table>
 			
-			<input type="checkbox" name="on" value="${isOn}" id="section-to-print" ${on?"checked":""> 
+			<input type="checkbox" name="on" value="${isOn}" id="section-to-print" ${on?"checked":""}> 
 			<label for="isOn" id="section-to-print"> Включить услугу мытья санузла<br> </label>
 			<label for="promo" id="section-to-print">Промокод </label> 
 			<input type="text" name="promo" id="section-to-print" value="${promo}" placeholder="Введите промокод"> <br> 

@@ -3,6 +3,10 @@ before_script:
 - echo "Starting building"
 script:
 - mvn clean package
+deply:
+provide: heroku 
+master: CleaningWedApp
+secure: grZM-FgjzG83kEuZdLXsOA
 after_script:
 - echo "Script finished"
 after_success:

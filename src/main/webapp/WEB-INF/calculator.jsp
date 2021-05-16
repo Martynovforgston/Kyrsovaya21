@@ -22,7 +22,7 @@ function openWindow() {
 	<div class="dropdown">
 		<button class="dropbtn">Файл</button>
 			<div class="dropdown-content">
-				<a href="calculator?actionToDo=saveToFile&result=${result}&count1leaf=${count1leaf}&count2leaf=${count2leaf}&count3leaf=${count3leaf}&countM2=${countM2}&promo=${promo}&isOn=${isOn}">Сохранить в файл</a>
+				<a href="calculator?actionToDo=saveToFile&result=${result}&count1leaf=${count1leaf}&count2leaf=${count2leaf}&count3leaf=${count3leaf}&countM2=${countM2}&promo=${promo}&on=${on}">Сохранить в файл</a>
 				<a href="javascript:print()">Печать файла</a>
 			</div>
 	</div>

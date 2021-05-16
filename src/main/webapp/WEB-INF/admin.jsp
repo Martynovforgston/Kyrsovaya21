@@ -74,7 +74,7 @@ function openWindow() {
 			<button type="submit" name="saveChange" class="btnAdmin"> Сохранить изменения</button>
 		</td>
 		</tr>
-		
+		<p style='color: green;'>${messageSuccess}</p>
 	</table>
 </form>
 </div>

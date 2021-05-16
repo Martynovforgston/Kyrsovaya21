@@ -16,17 +16,18 @@ public abstract class SettingsBase<T extends Property> {
 	}
 	
 	public void set(String name, Object value) {
-		// Ищем свойство с данным именем
+		// РС‰РµРј СЃРІ-РІРѕ СЃ РґР°РЅРЅС‹Рј РёРјРµРЅРµРј
 		T property = this.find(name);
-		// Если оно существует, задаем значение
+		// Р•СЃР»Рё СЃСѓС‰РµСЃС‚РІСѓРµС‚, Р·Р°РґР°РµРј Р·Р°С‡РµРЅРёРµ
 		if (property != null) {
 			property.setValue(value);
 		}
 	}
 	
 	public T find(String name) {
-		// Если в списке есть свойство с данным именем
+		// РџСЂРѕС…РѕРґРёРјСЃСЏ С†РёРєР»РѕРј РїРѕ РІСЃРµРј СЃРІ-РІР°Рј
 		for (T property: this.properties) {
+			// РС‰РµРј РЅСѓР¶РЅРѕРµ СЃРІ-РІРѕ РїРѕ РёРјРµРЅРё
 			if (property.getName().equals(name)) {
 				return property;
 			}

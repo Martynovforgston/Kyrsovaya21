@@ -32,6 +32,12 @@ function openWindow() {
 				<a href="javascript:{openWindow()}">О программе</a>
 			</div>
 	</div>
+		<div class="dropdown">
+		<button class="dropbtn">Аккаунт</button>
+			<div class="dropdown-content">
+				<a href="${pageContext.request.contextPath}/login">Выйти</a>
+			</div>
+	</div>
 </div> 
 	
 	<p style='color: red;'>${message}</p>
@@ -74,7 +80,6 @@ function openWindow() {
 
 			<button type="submit" name="calculate" value="Calc" class="btn">Рассчитать</button> <br>
 			
-			<button type="submit" name="logout" class="btn"> Выйти из аккаунта</button>
 		</form>
 	</div>
 </div>

@@ -7,8 +7,27 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<form action = "${pageContext.request.contextPath}/admin" method="post" id="Admin">
+
+<div class="navbar">
+	<div class="logo">
+		<img src="image/logo.jpg" width=50em height=50em>
+	</div>
+	<div class="dropdown">
+		<button class="dropbtn">Справка</button>
+			<div class="dropdown-content">
+				<a href="javascript:{openWindow()}">О программе</a>
+			</div>
+	</div>
+		<div class="dropdown">
+		<button class="dropbtn">Аккаунт</button>
+			<div class="dropdown-content">
+				<a href="${pageContext.request.contextPath}/login">Выйти</a>
+			</div>
+	</div>
+</div> 
+
 <div class="container">
+<form action = "${pageContext.request.contextPath}/admin" method="post" id="Admin">
 	<table border=0 cellpadding=5% >
 		<tr>
 			<td>Район города</td>
@@ -51,13 +70,8 @@
 		</td>
 		</tr>
 		
-		<tr>
-		<td colspan=2>
-			<button type="submit" name="logout" class="btnAdmin"> Выйти из аккаунта</button>
-		</td>
-		</tr>
 	</table>
-</div>
 </form>
+</div>
 </body>
 </html>

@@ -47,6 +47,10 @@ public class LoginServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+            	//Стираем сессию
+            	request.getSession().removeAttribute("logged");
+            	//Удаление аккаунта из сессии
+		request.getSession().removeAttribute("account");
 		request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
     }
 }

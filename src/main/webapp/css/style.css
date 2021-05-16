@@ -140,9 +140,6 @@ input[type="number"]:focus {
 	#section-to-print, #section-to-print * {
 		visibility: visible;
 	}
-	#section-to-print {
-		position: absolute;
-	}
 }
 
 .container {

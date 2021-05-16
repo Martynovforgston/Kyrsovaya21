@@ -84,7 +84,7 @@ public class SettingsManager extends SettingsBase<Property> {
 
 	@Override
 	public boolean save() {
-		// Не удалось создать фалй для настроек
+		// Удалось создать файл для настроек
 		if (Helper.TryCreateFile(filePath)) {
 			
 			try (PrintWriter writer = new PrintWriter(filePath, "UTF-8")) {	

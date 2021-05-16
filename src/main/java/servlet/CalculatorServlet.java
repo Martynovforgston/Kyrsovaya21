@@ -65,6 +65,9 @@ public class CalculatorServlet extends HttpServlet {
 					break;
 				}
 			}
+			// Если коэфф не применился - промокод не верный, стираем с поля
+				if (pcoeff == 1)
+					promoValue = "";
 			
 			// Делаем расчет
 			double result = calculator.calculate(rcoeff, pcoeff, count1leaf, count2leaf, count3leaf, countM2, isOn);

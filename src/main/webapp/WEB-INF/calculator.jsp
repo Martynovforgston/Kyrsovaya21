@@ -45,7 +45,7 @@ function openWindow() {
 	<div class="container"> 
 		<form action="${pageContext.request.contextPath}/calculator" method="post" id="Calculator">
 			<label for="district" id="section-to-print"> Район города </label> 
-			<select name="district" id="district" form="Calculator" class="selDis" required id="section-to-print">
+			<select name="district" form="Calculator" class="selDis" required id="section-to-print">
 				<option value="Kalininsky">Калининский</option>
 				<option value="Kirovsky">Кировский</option>
 				<option value="Octobersky">Октябрьский</option>

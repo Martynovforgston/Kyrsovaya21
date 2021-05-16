@@ -43,7 +43,7 @@ function openWindow() {
 	<p style='color: red;'>${message}</p>
 	
 	<div class="container"> 
-		<form action="${pageContext.request.contextPath}/calculator" method="post" id="Calculator">
+		<form action="${pageContext.request.contextPath}/calculator" method="post" id="Calculator" autocomplete="off">
 			<label for="district" id="section-to-print"> Район города </label> 
 			<select name="district" form="Calculator" class="selDis" required id="section-to-print">
 				<option value="Kalininsky">Калининский</option>

@@ -142,8 +142,6 @@ input[type="number"]:focus {
 	}
 	#section-to-print {
 		position: absolute;
-		left: 0;
-		top: 0;
 	}
 }
 

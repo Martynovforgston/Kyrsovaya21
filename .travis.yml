@@ -3,7 +3,7 @@ before_script:
 - echo "Starting building"
 script:
 - mvn clean package
-deply:
+deploy:
 provide: heroku 
 master: CleaningWedApp
 secure: grZM-FgjzG83kEuZdLXsOA

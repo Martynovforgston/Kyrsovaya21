@@ -7,6 +7,11 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<script type="text/javascript">
+function openWindow() {
+	myWindow=open("WEB-INF/aboutProgram.html", "О программе", "width=450px, height=400px, status=no; tollbar=no, menubar=no, scrollbar=no");
+}
+</script> 
 
 <div class="navbar">
 	<div class="logo">

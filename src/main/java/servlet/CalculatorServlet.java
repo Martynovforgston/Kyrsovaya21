@@ -108,7 +108,7 @@ public class CalculatorServlet extends HttpServlet {
 				data += "Кол-во двухстворчатых окон: " + Helper.parseString(request.getParameter("count2leaf")) + "\n";
     			data += "Кол-во трехстворченных окон: " + Helper.parseString(request.getParameter("count3leaf")) + "\n";
     			data += "Кол-во км м пола: " + Helper.parseString(request.getParameter("countM2")) + "\n";
-    			data += "Услуга мытья санузла: " + (Helper.parseBool(request.getParameter("isOn")) ? "включена" : "отсутствует") + "\n";
+    			data += "Услуга мытья санузла: " + (Helper.parseBool(request.getParameter("on")) ? "включена" : "отсутствует") + "\n";
     			data += "Использованный промокод: " + (Helper.parseString(request.getParameter("promo")).equals("") ? "отсутствует" : Helper.parseString(request.getParameter("promo"))) + "\n";
     			data += "Итого: " + result + " руб" + "\n";
 				

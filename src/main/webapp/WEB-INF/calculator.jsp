@@ -11,7 +11,7 @@
 
 <script type="text/javascript">
 function openWindow() {
-	myWindow=open("WEB-INF/aboutProgram.html", "О программе", "width=450px, height=400px, status=no; tollbar=no, menubar=no, scrollbar=no");
+	myWindow=open("aboutProgram.html", "О программе", "width=450px, height=400px, status=no; tollbar=no, menubar=no, scrollbar=no");
 }
 </script> 
 

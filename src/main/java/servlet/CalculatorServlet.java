@@ -69,11 +69,11 @@ public class CalculatorServlet extends HttpServlet {
 			// Делаем расчет
 			double result = calculator.calculate(rcoeff, pcoeff, count1leaf, count2leaf, count3leaf, countM2, isOn);
 			// Обновляем форму
+			request.setAttribute("district", region);
 			request.setAttribute("count1leaf", count1leaf);
 			request.setAttribute("count2leaf", count2leaf);
 			request.setAttribute("count3leaf", count3leaf);
 			request.setAttribute("countM2", countM2);
-			request.setAttribute("isOn", isOn);
 			request.setAttribute("on", isOn);
 			request.setAttribute("promo", promoValue);
 			request.setAttribute("result", (Math.round(result * 100)) / 100);

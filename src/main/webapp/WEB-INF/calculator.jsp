@@ -17,7 +17,7 @@ function openWindow() {
 
 <div class="navbar">
 	<div class="logo">
-		<img src="image/logo.jpg" width=50em height=50em>
+		<img src="image/logo.jpg" width=50em height=50em id=section-to-print>
 	</div>
 	<div class="dropdown">
 		<button class="dropbtn">Файл</button>
@@ -44,8 +44,8 @@ function openWindow() {
 	
 	<div class="container"> 
 		<form action="${pageContext.request.contextPath}/calculator" method="post" id="Calculator">
-			<label for="district"> Район города </label> 
-			<select name="district" id="district" form="Calculator" class="selDis" required>
+			<label for="district" id="section-to-print"> Район города </label> 
+			<select name="district" id="district" form="Calculator" class="selDis" required id="section-to-print">
 				<option value="Kalininsky">Калининский</option>
 				<option value="Kirovsky">Кировский</option>
 				<option value="Octobersky">Октябрьский</option>
@@ -56,25 +56,26 @@ function openWindow() {
 			</select> <br>
 			<table border="0" cellpadding="5%">
 				<tr>
-					<td><label for="1Leaf">Одностворчатых окон</label></td>
-					<td><label for="2Leaf">Двустворчатых окон</label></td>
-					<td><label for="3Leaf">Трехстворчатых окон</label></td>
+					<td><label for="1Leaf" id="section-to-print">Одностворчатых окон</label></td>
+					<td><label for="2Leaf" id="section-to-print">Двустворчатых окон</label></td>
+					<td><label for="3Leaf" id="section-to-print">Трехстворчатых окон</label></td>
 				</tr>
 				<tr>
-					<td><input type="number" id="1Leaf" name="1Leaf" min="0" max="100" value="${count1leaf}"></td>
-					<td><input type="number" id="2Leaf" name="2Leaf" min="0" max="100" value="${count2leaf}"></td>
-					<td><input type="number" id="3Leaf" name="3Leaf" min="0" max="100" value="${count3leaf}"></td>
+					<td><input type="number" id="section-to-print" name="1Leaf" min="0" max="100" value="${count1leaf}"></td>
+					<td><input type="number" id="section-to-print" name="2Leaf" min="0" max="100" value="${count2leaf}"></td>
+					<td><input type="number" id="section-to-print" name="3Leaf" min="0" max="100" value="${count3leaf}"></td>
 				</tr>
 				<tr>
-					<td colspan="3"><label for="Floor">Количество кв м пола </label> 
-					<input type="number" id="Floor" name="Floor" min="0" max="200" value="${countM2}"></td>
+					<td colspan="3"><label for="Floor" id="section-to-print">Количество кв м пола </label> 
+					<input type="number" id="section-to-print" name="Floor" min="0" max="200" value="${countM2}"></td>
 				</tr>
 			</table>
 			
-			<input type="checkbox" name="on" value="${isOn}"> Включить услугу мытья санузла<br> 
-			<label for="promo">Промокод </label> 
-			<input type="text" name="promo" id="promo" value="${promo}" placeholder="Введите промокод"> <br> 
-			<label for="promo">Стоимость</label>
+			<input type="checkbox" name="on" value="${isOn}" id="section-to-print"> 
+			<p id="section-to-print"> Включить услугу мытья санузла<br> </p>
+			<label for="promo" id="section-to-print">Промокод </label> 
+			<input type="text" name="promo" id="section-to-print" value="${promo}" placeholder="Введите промокод"> <br> 
+			<label for="promo" id="section-to-print">Стоимость</label>
 
 			<input type="text" name="result" id="section-to-print" value="${result}" disabled> <br>
 

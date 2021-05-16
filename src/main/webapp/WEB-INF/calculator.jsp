@@ -46,13 +46,13 @@ function openWindow() {
 		<form action="${pageContext.request.contextPath}/calculator" method="post" id="Calculator" autocomplete="off">
 			<label for="district" id="section-to-print"> Район города </label> 
 			<select name="district" form="Calculator" class="selDis" required id="section-to-print">
-				<option value="Kalininsky">Калининский</option>
-				<option value="Kirovsky">Кировский</option>
-				<option value="Octobersky">Октябрьский</option>
-				<option value="Leninsky">Ленинский</option>
-				<option value="Ordzhonikidzevskiy">Орджоникидзевский</option>
-				<option value="Demsky">Демский</option>
-				<option value="Sovetsky">Советский</option>
+				<option value="Kalininsky" ${district=="Kalininsky"?"selected":""}>Калининский</option>
+				<option value="Kirovsky" ${district=="Kirovsky"?"selected":""}>Кировский</option>
+				<option value="Octobersky" ${district=="Octobersky"?"selected":""}>Октябрьский</option>
+				<option value="Leninsky" ${district=="Leninsky"?"selected":""}>Ленинский</option>
+				<option value="Ordzhonikidzevskiy" ${district=="Ordzhonikidzevskiy"?"selected":""}>Орджоникидзевский</option>
+				<option value="Demsky" ${district=="Demsky"?"selected":""}>Демский</option>
+				<option value="Sovetsky" ${district=="Sovetsky"?"selected":""}>Советский</option>
 			</select> <br>
 			<table border="0" cellpadding="5%">
 				<tr>
@@ -71,7 +71,7 @@ function openWindow() {
 				</tr>
 			</table>
 			
-			<input type="checkbox" name="on" value="${isOn}" id="section-to-print"> 
+			<input type="checkbox" name="on" value="${isOn}" id="section-to-print" ${on?"checked":""> 
 			<label for="isOn" id="section-to-print"> Включить услугу мытья санузла<br> </label>
 			<label for="promo" id="section-to-print">Промокод </label> 
 			<input type="text" name="promo" id="section-to-print" value="${promo}" placeholder="Введите промокод"> <br> 

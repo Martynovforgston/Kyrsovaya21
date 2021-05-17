@@ -3,11 +3,11 @@ package core.calculator;
 public class Calculator21 implements ICalculator {
 	
 	public double calculate(double regionCoeff, double promoCoeff, int count1Leaf, int count2Leaf, int count3Leaf, int countM2Floor, boolean isBathroomOn) {
-		// Включена ли услуга по мытью санузла
+		// Р’РєР»СЋС‡РµРЅР° Р»Рё СѓСЃР»СѓРіР° РїРѕ РјС‹С‚СЊСЋ СЃР°РЅСѓР·Р»Р°
 		int bathroomPrice = 0;
 		if (isBathroomOn == true) bathroomPrice = 1000;
 		
-		// Расчет стоимости по формуле
+		// Р Р°СЃС‡РµС‚ СЃС‚РѕРёРјРѕСЃС‚Рё РїРѕ С„РѕСЂРјСѓР»Рµ
 		double result = regionCoeff * promoCoeff * 
 				(300 * count1Leaf + 
 				 400 * count2Leaf + 

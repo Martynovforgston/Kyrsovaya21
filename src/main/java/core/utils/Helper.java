@@ -7,7 +7,7 @@ import core.settings.SettingsManager;
 
 public class Helper {
 
-	// Метод для получения коэффициента района
+	// РњРµС‚РѕРґ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РєРѕСЌС„С„РёС†РёРµРЅС‚Р° СЂР°Р№РѕРЅР°
 	public static double getRegionCoeff(String name, SettingsManager settings) {
 		
 		Property coeff = settings.find(name);
@@ -22,7 +22,7 @@ public class Helper {
 	{
 		try {
 			File file = new File(path);
-			// Если файл не существует, то создаем
+			// Р•СЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚, С‚Рѕ СЃРѕР·РґР°РµРј
 			if (!file.exists())
 			{
 				file.createNewFile();

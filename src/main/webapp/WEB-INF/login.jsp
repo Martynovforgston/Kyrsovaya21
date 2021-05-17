@@ -9,7 +9,7 @@
 <body>
 <div class="wrapper">
   <header class="header">
-<img src="logo.jpg" id=section-to-print class="logo"> 
+<img src="image/logo.jpg" id=section-to-print class="logo"> 
 	</header><!-- .header-->
   
   <main class="contentLogin">

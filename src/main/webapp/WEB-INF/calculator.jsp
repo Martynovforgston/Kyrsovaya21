@@ -84,7 +84,7 @@ function openWindow() {
 </div><!-- .wrapper -->
 
 <footer class="footer">
-	<img src="logo.jpg" id=section-to-print class="image/logo"> 
+	<img src="image/logo.jpg" id=section-to-print class="logo"> 
 	<p class=pCalc>Компания ООО "ВАРИАНТ 21" представляет "Калькулятор клининговых услуг для квартир"
 </div><!-- .footer -->
 </body>

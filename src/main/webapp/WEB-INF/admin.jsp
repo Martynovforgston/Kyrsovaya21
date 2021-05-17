@@ -12,11 +12,9 @@ function openWindow() {
 	myWindow=open("aboutProgram.html", "О программе", "width=450px, height=400px, status=no; tollbar=no, menubar=no, scrollbar=no");
 }
 </script> 
-
-<div class="navbar">
-	<div class="logo">
-		<img src="image/logo.jpg" width=50em height=50em>
-	</div>
+<div class="wrapper">
+  <header class="header">
+  <div class=navbar>
 	<div class="dropdown">
 		<button class="dropbtn">Справка</button>
 			<div class="dropdown-content">
@@ -29,11 +27,11 @@ function openWindow() {
 				<a href="${pageContext.request.contextPath}/login">Выйти</a>
 			</div>
 	</div>
-</div> 
-
-<div class="container">
-<form action = "${pageContext.request.contextPath}/admin" method="post" id="Admin">
-	<table border=0 cellpadding=5% >
+	</header><!-- .header-->
+  
+  <main class="content">
+  <form action = "${pageContext.request.contextPath}/admin" method="post" id="Admin">
+  <table border=0 cellpadding=5% >
 		<tr>
 			<td>Район города</td>
 			<td>Коэффициент</td>
@@ -76,8 +74,19 @@ function openWindow() {
 		</tr>
 		
 	</table>
-	<p style='color: green;'>${messageSuccess}</p>
 </form>
-</div>
+
+<p style='color: green;'>${messageSuccess}</p> 
+</div>/** Сообщение об успешном сохранении*/
+	
+		
+	</main><!-- .content -->
+
+</div><!-- .wrapper -->
+
+<footer class="footer">
+	<img src="logo.jpg" id=section-to-print class="logo"> 
+	<p class=pCalc>Компания ООО "ВАРИАНТ 21" представляет "Калькулятор клининговых услуг для квартир"
+</div><!-- .footer -->
 </body>
 </html>

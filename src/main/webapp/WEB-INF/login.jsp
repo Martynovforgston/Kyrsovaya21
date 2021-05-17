@@ -4,21 +4,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Авторизация</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/styleLogin.css">
 </head>
 <body>
-<center>
-	<form action="${pageContext.request.contextPath}/login" method="post">
-		<div class="header">
-			<h2>Вход в калькулятор клининговых услуг для квартир</h2>
-		</div>
-		<div class="container">
+<div class="wrapper">
+  <header class="header">
+<img src="logo.jpg" id=section-to-print class="logo"> 
+	</header><!-- .header-->
+  
+  <main class="contentLogin">
+  <form action="${pageContext.request.contextPath}/login" method="post" class="formLogin">
+		
 			<label for="login">Логин</label><br> <input type="text"name="login" id="login" value="${login}" placeholder="Введите логин">
 			<br> <label for="password">Пароль</label><br> <input type="password" name="password" id="password" value="${password}" placeholder="Введите пароль"> <br>
-			<p style='color: red;'>${message}</p>
 			<button type="submit" name="sign" value="Sign" class="btn">Войти</button>
-		</div>
+		
 	</form>
-	</center>
+	  	<p style='color: red;'>${message}</p> 
+		
+	</main><!-- .content -->
+
+</div><!-- .wrapper -->
 </body>
 </html>

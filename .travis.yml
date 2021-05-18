@@ -4,9 +4,10 @@ before_script:
 script:
 - mvn clean package
 deploy:
-provide: heroku 
-master: CleaningWedApp
-secure: grZM-FgjzG83kEuZdLXsOA
+  provider: heroku
+  api_key:
+   secure: grZM-FgjzG83kEuZdLXsOA
+  app: kyrsovaya21
 after_script:
 - echo "Script finished"
 after_success:

@@ -77,13 +77,8 @@ function openWindow() {
 </form>
 
 <p style='color: green;'>${messageSuccess}</p> 
-</div>/** Сообщение об успешном сохранении*/
-	
-		
 	</main><!-- .content -->
-
 </div><!-- .wrapper -->
-
 <footer class="footer">
 	<img src="image/logo.jpg" id=section-to-print class="logo"> 
 	<p class=pCalc>Компания ООО "ВАРИАНТ 21" представляет "Калькулятор клининговых услуг для квартир"

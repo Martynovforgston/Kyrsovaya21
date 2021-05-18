@@ -22,18 +22,20 @@ body {
 /* Middle
 -----------------------------------------------------------------------------*/
 .content {
-	padding: 0 0 100px;
+	padding: 0 0 10px;
 	background: white;
+	margin-top:10px;
+	margin-left:5px;
+ 	min-height: calc(100vh - 140px);
 }
 
 /* Footer
 -----------------------------------------------------------------------------*/
 .footer {
-	margin: -100px auto 0;
 	min-width: 1000px;
 	height: 100px;
 	background: #3775dd;
-	position: relative;
+	position: relatiave;
 	color:white;
 	text-align:center;
 }

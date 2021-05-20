@@ -18,6 +18,27 @@ public class Helper {
 		return 1.0;
 	}
 	
+	public static String getRegionName(String aliase) {
+		switch (aliase) {
+		case "Kalininsky":
+			return "Калининский";
+		case "Demsky":
+			return "Демский";
+		case "Kirovsky":
+			return "Кировский";
+		case "Leninsky":
+			return "Ленинский";
+		case "Octobersky":
+			return "Октябрьский";
+		case "Ordzhonikidzevskiy":
+			return "Орджоникидзевский";
+		case "Sovetsky":
+			return "Советский";
+		default:
+			return "???";
+		}
+	}
+	
 	public static boolean TryCreateFile(String path)
 	{
 		try {

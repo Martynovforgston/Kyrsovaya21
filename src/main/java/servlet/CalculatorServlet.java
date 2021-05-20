@@ -14,6 +14,7 @@ import javax.servlet.http.*;
 import core.calculator.*;
 import core.settings.SettingsManager;
 import core.utils.Helper;
+import core.utils.PDF21;
 
 @WebServlet(name = "CalculatorServlet", urlPatterns = "/calculator")
 public class CalculatorServlet extends HttpServlet {
@@ -87,40 +88,37 @@ public class CalculatorServlet extends HttpServlet {
 	
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("GET");
 		// Пользователь не авторизован
 		if (request.getSession().getAttribute("logged") == null || !(Boolean)request.getSession().getAttribute("logged")) {
-			request.removeAttribute("message");
 			response.sendRedirect(request.getContextPath() + "/login");
 			return;
-		} 
-		else {
-			String action = Helper.parseString(request.getParameter("actionToDo"));
-			Double result = Helper.parseDouble(request.getParameter("result"));
+		}
+		
+		String action = Helper.parseString(request.getParameter("actionToDo"));
+		Double result = Helper.parseDouble(request.getParameter("result"));
+		
+		// Пользователь выбрал пункт меню сохранения файла
+		if (action.equals("saveToFile") && result > 0) {
 			
-			// Пользователь выбрал пункт меню сохранения файла
-			if (action.equals("saveToFile") && result > 0) {
-				
-				response.setContentType("text/txt");
-				response.setHeader("Content-disposition", "attachment; filename=results.txt");
+			response.setContentType("application/pdf");
+			response.setHeader("Content-Disposition", "attachment; filename=receipt.pdf");
 
-				String data = "Кол-во одностворчатых окон: " + Helper.parseString(request.getParameter("count1leaf")) + "\n";
-				data += "Кол-во двухстворчатых окон: " + Helper.parseString(request.getParameter("count2leaf")) + "\n";
-    			data += "Кол-во трехстворченных окон: " + Helper.parseString(request.getParameter("count3leaf")) + "\n";
-    			data += "Кол-во км м пола: " + Helper.parseString(request.getParameter("countM2")) + "\n";
-    			data += "Услуга мытья санузла: " + (Helper.parseBool(request.getParameter("on")) ? "включена" : "отсутствует") + "\n";
-    			data += "Использованный промокод: " + (Helper.parseString(request.getParameter("promo")).equals("") ? "отсутствует" : Helper.parseString(request.getParameter("promo"))) + "\n";
-    			data += "Итого: " + result + " руб" + "\n";
-				
-		        try (OutputStream out = response.getOutputStream()) {
-		            out.write(data.getBytes());
-		        } catch (Exception e) {
-					System.out.println(e.getMessage());
-	    			request.setAttribute("message", "Не удалось сохранить файл");
-				}
+	        try (OutputStream out = response.getOutputStream()) {
+	            out.write(PDF21.create(
+	            		Helper.parseString(request.getParameter("district")), 
+	            		Helper.parseInt(request.getParameter("count1leaf")), 
+	            		Helper.parseInt(request.getParameter("count2leaf")), 
+	            		Helper.parseInt(request.getParameter("count3leaf")), 
+	            		Helper.parseInt(request.getParameter("countM2")), 
+	            		Helper.parseBool(request.getParameter("on")), 
+	            		Helper.parseString(request.getParameter("promo")), 
+	            		result));
+	            		response.flushBuffer();
+	        } catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
-			
-			request.getRequestDispatcher("WEB-INF/calculator.jsp").forward(request, response);
-	    }
+		}
+		
+		request.getRequestDispatcher("WEB-INF/calculator.jsp").forward(request, response);
     }
 }

@@ -41,10 +41,8 @@ public class PDF21 {
     	
     	// Всякая инфа
     	addField(document, "Наименование организации", "ООО \"Вариант21\"", 0);
-    	addField(document, "ИНН", "777666234123", 0);
-    	addField(document, "Адрес", "г. Уфа, ул. Пушкина, 13", 2);
     	
-    	// Добавляем, скалируем и размещаем лого
+    	// Добавляем, масштабируем и размещаем лого
     	Image logo = createImage(document, "logo.jpg");
     	logo.scaleAbsolute(65f, 65f);
     	logo.setAbsolutePosition(document.right() - (logo.getScaledWidth()), document.top() - logo.getScaledHeight());

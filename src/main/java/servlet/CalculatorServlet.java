@@ -117,6 +117,8 @@ public class CalculatorServlet extends HttpServlet {
 	        } catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
+			//Т.К. дальнейшего перенаправляения не требуется, выходим из метода
+			return;
 		}
 		
 		request.getRequestDispatcher("WEB-INF/calculator.jsp").forward(request, response);

@@ -44,10 +44,11 @@ public class PDF21 {
     	
     	// Добавляем, масштабируем и размещаем лого
     	Image logo = createImage(document, "logo.jpg");
-    	logo.scaleAbsolute(65f, 65f);
+    	logo.scaleAbsolute(50f, 50f);
     	logo.setAbsolutePosition(document.right() - (logo.getScaledWidth()), document.top() - logo.getScaledHeight());
     	document.add(logo);
     	
+	addEmptyLine(p, indents);
     	Paragraph calcPar = new Paragraph("Итоговый расчет от " + new SimpleDateFormat("dd.MM.yyyy").format(new Date()), getFont(16, Font.BOLD));
     	calcPar.setAlignment(Paragraph.ALIGN_CENTER);
         document.add(calcPar);

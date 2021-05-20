@@ -4,7 +4,8 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-
+import core.login.Account;
+import core.login.LoginController;
 
 public class LoginControllerTest {
 

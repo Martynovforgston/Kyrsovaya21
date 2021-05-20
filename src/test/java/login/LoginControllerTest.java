@@ -1,4 +1,4 @@
-package core.login;
+package login;
 
 import static org.junit.Assert.assertNotNull;
 

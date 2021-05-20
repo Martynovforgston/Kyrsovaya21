@@ -58,7 +58,7 @@ public class PDF21 {
         table.addCell(new Phrase("Наименование", getFont(14, Font.BOLD)));
         table.addCell(new Phrase("Значение", getFont(14, Font.BOLD)));
         
-        table.addCell(new Phrase("Регион", getFont(14, Font.NORMAL)));
+        table.addCell(new Phrase("Район", getFont(14, Font.NORMAL)));
         table.addCell(new Phrase(Helper.getRegionName(district), getFont(14, Font.NORMAL)));
         
         table.addCell(new Phrase("Кол-во одностворчатых окон", getFont(14, Font.NORMAL)));

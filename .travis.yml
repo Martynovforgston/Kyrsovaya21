@@ -1,17 +1,8 @@
 language: java
-before_script:
-- echo "Starting building"
-script:
-- mvn clean package
 deploy:
   provider: heroku
   api_key:
    secure: "Sp46oINfHVBQL3/55KMrUpl/PEqojsUdMrnfHq5NwEojbKuBXj1g9YAsY5dl7VeQLLvgDSEsG2DoeDhxLQPTswtFsAzN5lMWH3fqrhl+KPMGmYNS7llXCZHIz1+5oGWdAdLEe2I4iUHKId9MKL6eWyBAW+VzZCsqUsHxknZS25qZ2rkDCVh4rKAoTsBHHQBEU7UhzFdBYe7SZQVdSA9yVbJMhqxJVK5LPDkqHp7j+hQUB/53RCSqkFRG/wkGWeJn02dW1/9QDGbEJQOmVHbIXKgU/ksedfvcPIckMLdkqg86ZAIwIIT+xYc2nOAESv8m302WS+h9OckmRNcyVqmYYVYfWQtn0PLetBNAvs0ciVaUKhINjiTZRp96oD1J8tOBbKbWMBPznGvo/FRpd5N2riQ1WdB3f5pogwdHkandwFsTR4GorQOIQ0P8RUIjCr/XHisjWjdHNWM/XHrhXgZ7zsinzKIICdLvyB9FNIz0mmuiP0Vrf9maWNEP4bK97/OQ49kjcBIl02bqdyUiPGSKFYdgLjSyeUn2h+bt6KYOx6FH60yOlceKxW/843fr/xsSrjgpOOR+KYBF519ALLesSB91DTwPZHOFMnPl2iWRr4IuNtiAjKhkQJpTUcdD4/fRUqdXbH8xi7ZDhQPhPZ6xi2KIkdLnszGTy0/PAd5dj5M="
   app: kyrsovaya21
-after_script:
-- echo "Script finished"
-after_success:
-- echo "Build ready"
-- ls -l $TRAVISE_BUILD_DIR/target
-after_failure:
-- echo "Build failure"
+script:
+- mvn clean package

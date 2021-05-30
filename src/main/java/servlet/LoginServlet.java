@@ -14,8 +14,7 @@ public class LoginServlet extends HttpServlet {
 	private LoginController controller;
 	
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)	throws ServletException, IOException {
 		// Инициализируем класс контроллера
 		this.controller = new LoginController();
 		
@@ -23,7 +22,7 @@ public class LoginServlet extends HttpServlet {
 		String username = request.getParameter("login");
 		String password = request.getParameter("password");
 		
-		// Пытаемся авторизоваться
+		// Получаем аккаунт, если есть такой пользователь с логином и паролем. Пытаемся авторизоваться
 		Account account = controller.login(username, password);
 		
 		// Не успешная авторизация
@@ -45,8 +44,7 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	@Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             	//Стираем сессию
             	request.getSession().removeAttribute("logged");
             	//Удаление аккаунта из сессии

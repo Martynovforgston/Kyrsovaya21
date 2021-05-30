@@ -23,6 +23,7 @@ public class CalculatorServlet extends HttpServlet {
 	ICalculator calculator;
 	List<Promo> promos;
 	
+	// Конструктор
 	@Override
 	public void init() throws ServletException {
 		calculator = new Calculator21();
@@ -37,7 +38,6 @@ public class CalculatorServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Пользователь не авторизован
 		if (request.getSession().getAttribute("logged") == null || !(Boolean)request.getSession().getAttribute("logged")) {
-			request.removeAttribute("message");
 			response.sendRedirect(request.getContextPath() + "/login");
 			return;
 		}
@@ -58,7 +58,7 @@ public class CalculatorServlet extends HttpServlet {
 			double pcoeff = 1;
 			
 			// Проходимся по типам промокодов
-			for(Promo promo: this.promos) {
+			for(Promo promo: promos) {
 				double coeff = promo.getCoeff(promoValue);
 				// Если промокод дал скидку, сохраняем и выходим из цикла
 				if (coeff < 1) {
@@ -98,13 +98,15 @@ public class CalculatorServlet extends HttpServlet {
 		Double result = Helper.parseDouble(request.getParameter("result"));
 		
 		// Пользователь выбрал пункт меню сохранения файла
-		if (action.equals("saveToFile") && result > 0) {
-			
+		if (action.equals("saveToFile")) {
+			// Передача файла, чтобы его можно было сохранить
 			response.setContentType("application/pdf");
-			response.setHeader("Content-Disposition", "attachment; filename=receipt.pdf");
-
+			// Вложение которое будет скачано  
+			response.setHeader("Content-Disposition", "attachment; filename=check.pdf");
+		// Обращаемся к ответу, который отдадим пользователю
 	        try (OutputStream out = response.getOutputStream()) {
-	            out.write(PDF21.create(
+	          // Запись в ответ пользователя
+			out.write(PDF21.create(
 	            		Helper.parseString(request.getParameter("district")), 
 	            		Helper.parseInt(request.getParameter("count1leaf")), 
 	            		Helper.parseInt(request.getParameter("count2leaf")), 
@@ -113,6 +115,7 @@ public class CalculatorServlet extends HttpServlet {
 	            		Helper.parseBool(request.getParameter("on")), 
 	            		Helper.parseString(request.getParameter("promo")), 
 	            		result));
+			// Очистка буффера обмена
 	            		response.flushBuffer();
 	        } catch (Exception e) {
 				System.out.println(e.getMessage());

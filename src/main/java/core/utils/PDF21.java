@@ -17,11 +17,13 @@ public class PDF21 {
             Document document = new Document();
             // Поток байтов, куда будет передан документ
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
+	    // Документ будет помещен в стрим
             PdfWriter.getInstance(document, stream);
             document.open();
             addMetaData(document);
             addContent(document, district, count1Leaf, count2Leaf, count3Leaf, countM2Floor, isBathOn, promo, result);
             document.close();
+	    // Прнобразуем в массив байтов
             return stream.toByteArray();
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,7 +88,9 @@ public class PDF21 {
         // Создаем параграф для таблицы
         Paragraph tableParagraph = new Paragraph("", getFont(14, Font.NORMAL));
         addEmptyLine(tableParagraph, 2);
+	// Добавляем таблицу в параграф
         tableParagraph.add(table);
+	// Параграф добавляем в документ
         document.add(tableParagraph);
     }
 
@@ -97,6 +101,7 @@ public class PDF21 {
     	document.add(p);
     }
     
+    // Добавление пустых строк,  i - количество
     private static void addEmptyLine(Paragraph paragraph, int number) {
         for (int i = 0; i < number; i++) {
             paragraph.add(new Paragraph(" "));
@@ -104,17 +109,20 @@ public class PDF21 {
     }
     
     private static PdfPTable createTable(Document document) throws DocumentException, IOException {
-    	// Создаем таблицу
+    	// Создаем таблицу с 2мя колонками
         PdfPTable table = new PdfPTable(2);
+	// 1 строка является заголовками
         table.setHeaderRows(1);
         return table;
     }
     
+	// Создание изображения
     private static Image createImage(Document document, String name) throws DocumentException, MalformedURLException, IOException {
+	//Загрузить файл из папки ресурсов
     	Image img = Image.getInstance(PDF21.class.getClassLoader().getResource(name));
     	return img;
     }
-    
+    // Получаем шрифт
     private static Font getFont(float size, int style) throws DocumentException, IOException {
     	BaseFont bf = BaseFont.createFont("font.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
     	return new Font(bf, size, style);

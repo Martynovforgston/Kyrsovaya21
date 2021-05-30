@@ -21,25 +21,21 @@ public class AdminServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// Если пользователь не авторизован, отправляем его на страницу авторизацию
 		if (request.getSession().getAttribute("logged") == null || !(Boolean)request.getSession().getAttribute("logged")) {
-			request.setAttribute("message", "Сначало авторизуйтесь");
 			response.sendRedirect(request.getContextPath() + "/login");
 			return;
 		}
 		// Если пользователь авторизован, но его аккаунт не найден или не имеет админские привилегии
 		else if (request.getSession().getAttribute("account") == null || ((Account)(request.getSession().getAttribute("account"))).isAdmin() == false) {
-			request.setAttribute("message", "Недостаточно прав");
 			response.sendRedirect(request.getContextPath() + "/login");
 			return;
 		}
-		System.out.println("ADMIN POST");
 		
 		settings = new SettingsManager();
 		settings.load();
 		// Пользователь нажал на кнопку сохранения файла
 		if (request.getParameter("saveChange") != null) {
+			//Проходимся по всем параметрам коэффициентов
 			for(String parameter : request.getParameterMap().keySet()) {
-				// Вывод в консоль
-				System.out.println(parameter + "=" + request.getParameter(parameter));
 				// Если в настройках есть такой параметр
 			    if (settings.find(parameter) != null) {
 			    	// Задаем в настройки параметр с новым значением
@@ -69,9 +65,10 @@ public class AdminServlet extends HttpServlet {
 			return;
 		}
 		settings = new SettingsManager();
+	    //Загрузка данных на форму из файла, если файл не удастся создать, то загрузка по умолчанию
 		settings.load();
+	    //Проходимся по всем свойствам (коэффициентам) из настроек
 		for (Property property: settings.getAll()) {
-			System.out.println(property.getName() + "=" + property.getValue());
 			// Обновляем данные для формы
 			req.setAttribute(property.getName(), property.getValue());
 		}

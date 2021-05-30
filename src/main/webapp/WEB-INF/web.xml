@@ -3,26 +3,9 @@
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
-
-    <!-- <servlet> -->
-        <!-- <servlet-name>loginServlet</servlet-name> -->
-        <!-- <servlet-class>servlet.LoginServlet</servlet-class> -->
-    <!-- </servlet> -->
-	
-	<!-- <servlet> -->
-		<!-- <servlet-name>calculatorServlet</servlet-name> -->
-        <!-- <servlet-class>servlet.CalculatorServlet</servlet-class> -->
-	<!-- </servlet> -->
-
-    <!-- <servlet-mapping> -->
-        <!-- <servlet-name>loginServlet</servlet-name> -->
-        <!-- <url-pattern>/login</url-pattern> -->
-    <!-- </servlet-mapping> -->
-	
-	<!-- <servlet-mapping> -->
-		<!-- <servlet-name>calculatorServlet</servlet-name> -->
-        <!-- <url-pattern>/calculator</url-pattern> -->
-    <!-- </servlet-mapping> -->
-
+		<display-name>Калькулятор клининговых услуг</display-name>
+		<welcome-file-list>
+			<welcome-file>login.jsp</welcome-file>
+		</welcome-file-list>
 </web-app>
 

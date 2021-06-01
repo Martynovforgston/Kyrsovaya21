@@ -1,2 +1,17 @@
-/target/
-/artifacts/
+# Package Files                                                                
+*.jar                                                                           
+*.war                                                                           
+*.ear                                                                           
+
+# Eclipse Files                                                                  
+.project                                                                        
+
+# Folders                                                                       
+.classpath/                                                                     
+.settings/                                                                      
+.metadata/                                                                      
+WEB-INF/lib/                                                                    
+META-INF/                                                                       
+Servers/ 
+target/
+artifacts/
